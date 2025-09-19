@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MariamHelloWorld</string>
+
+
+    <string name="button_send">Send — Mariam</string>
+    <string name="edit_message_hint">Enter message to Mariam</string>
+    <string name="title_display_activity">Display — Mariam</string>
+    <string name="title_activity_calculator">CalculatorActivity</string>
+</resources>
