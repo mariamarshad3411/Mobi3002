@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MariamHelloWorldFinal</string>
+    <string name="hint_message">Enter message to Mariam</string>
+    <string name="send_button_text">Send to Mariam</string>
+    <string name="display_message_activity">Mariam\'s Message</string>
+</resources>
+
