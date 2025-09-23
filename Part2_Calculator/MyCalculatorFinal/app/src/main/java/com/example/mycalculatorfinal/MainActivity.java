@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     private void calculate(char operator) {
         String num1Str = editText_Num1.getText().toString();
         String num2Str = editText_Num2.getText().toString();
