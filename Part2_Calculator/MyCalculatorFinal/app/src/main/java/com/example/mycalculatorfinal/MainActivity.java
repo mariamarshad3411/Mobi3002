@@ -2,10 +2,9 @@ package com.example.mycalculatorfinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         editText_Num1 = findViewById(R.id.editText_Num1);
         editText_Num2 = findViewById(R.id.editText_Num2);
         editText_Answer = findViewById(R.id.editText_Answer);
@@ -26,34 +26,20 @@ public class MainActivity extends AppCompatActivity {
         button_Multiply = findViewById(R.id.button_Multiply);
         button_Divide = findViewById(R.id.button_Divide);
 
-        button_Add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { calculate('+'); }
-        });
 
-        button_Subtract.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { calculate('-'); }
-        });
-
-        button_Multiply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { calculate('*'); }
-        });
-
-        button_Divide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { calculate('/'); }
-        });
+        button_Add.setOnClickListener(v -> calculate('+'));
+        button_Subtract.setOnClickListener(v -> calculate('-'));
+        button_Multiply.setOnClickListener(v -> calculate('*'));
+        button_Divide.setOnClickListener(v -> calculate('/'));
     }
-
 
     private void calculate(char operator) {
         String num1Str = editText_Num1.getText().toString();
         String num2Str = editText_Num2.getText().toString();
 
         if(num1Str.isEmpty() || num2Str.isEmpty()) {
-            Toast.makeText(this, getString(R.string.error_empty), Toast.LENGTH_SHORT).show();
+            editText_Answer.setText("Enter both numbers");
+            Log.d("CalculatorDebug", "One or both numbers are empty.");
             return;
         }
 
@@ -67,13 +53,18 @@ public class MainActivity extends AppCompatActivity {
             case '*': result = num1 * num2; break;
             case '/':
                 if(num2 == 0) {
-                    Toast.makeText(this, getString(R.string.error_divzero), Toast.LENGTH_SHORT).show();
+                    editText_Answer.setText("Cannot divide by 0");
+                    Log.d("CalculatorDebug", "Division by zero attempted.");
                     return;
                 }
-                result = num1 / num2;
-                break;
+                result = num1 / num2; break;
         }
 
         editText_Answer.setText(String.valueOf(result));
+
+
+        Log.d("CalculatorDebug", "Num1: " + num1 + ", Num2: " + num2 +
+                ", Operator: " + operator + ", Result: " + result);
     }
 }
+

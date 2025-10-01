@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CalculatorApp</string>
+    <string name="app_name">MariamCalculator</string>
     <string name="hint_num1">Enter first number</string>
     <string name="hint_num2">Enter second number</string>
     <string name="hint_answer">Answer</string>
@@ -7,6 +7,5 @@
     <string name="button_subtract">Subtract</string>
     <string name="button_multiply">Multiply</string>
     <string name="button_divide">Divide</string>
-    <string name="error_empty">Please enter both numbers</string>
-    <string name="error_divzero">Cannot divide by zero</string>
+    <string name="graphic_name_desc">Mariam Name Graphic</string>
 </resources>
