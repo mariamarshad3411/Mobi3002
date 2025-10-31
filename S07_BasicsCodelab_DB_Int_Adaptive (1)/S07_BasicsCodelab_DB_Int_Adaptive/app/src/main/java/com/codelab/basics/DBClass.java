@@ -10,7 +10,6 @@ public class DBClass {
     private List<DataModel> pokemonList;
     private SharedPreferences prefs;
 
-
     public DBClass(Context context) {
         prefs = context.getSharedPreferences("PokemonPrefs", Context.MODE_PRIVATE);
 
@@ -23,7 +22,6 @@ public class DBClass {
         pokemonList.add(new DataModel(6, "Eevee", 75, "Evolution fox", prefs.getLong("Eevee", 0L)));
     }
 
-
     public List<DataModel> findAll() {
         return pokemonList;
     }
@@ -33,13 +31,13 @@ public class DBClass {
         for (DataModel p : pokemonList) {
             if (p.number == number) {
                 p.accessCount++;
-                // Persist immediately
+
+
                 prefs.edit().putLong(p.name, p.accessCount).apply();
                 break;
             }
         }
     }
-
 
     public DataModel getMostAccessed() {
         DataModel favorite = pokemonList.get(0);

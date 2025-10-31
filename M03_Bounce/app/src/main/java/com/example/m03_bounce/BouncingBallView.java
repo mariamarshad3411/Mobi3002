@@ -17,11 +17,11 @@ public class BouncingBallView extends View {
     private ArrayList<Shape> shapes = new ArrayList<>();
     private Paint paint = new Paint();
 
-    // For swipe detection
+
     private float startX, startY;
     private long startTime;
 
-    // Rectangle position and size
+
     private float rectLeft = 300;
     private float rectTop = 300;
     private float rectRight = 600;
@@ -40,7 +40,7 @@ public class BouncingBallView extends View {
         super.onDraw(canvas);
 
 
-        canvas.drawColor(Color.parseColor("#A8E6CF"));
+        canvas.drawColor(Color.parseColor("#A8E6CF"));                              ..
 
 
         paint.setColor(Color.parseColor("#FFD3B6")); // pastel
